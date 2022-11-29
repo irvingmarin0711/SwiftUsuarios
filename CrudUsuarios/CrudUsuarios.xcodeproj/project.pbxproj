@@ -13,6 +13,7 @@
 		F93EB5612935F16A00A5116E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93EB5602935F16A00A5116E /* ContentView.swift */; };
 		F93EB5632935F16D00A5116E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93EB5622935F16D00A5116E /* Assets.xcassets */; };
 		F93EB5672935F16D00A5116E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93EB5662935F16D00A5116E /* Preview Assets.xcassets */; };
+		F93EB56E2935F9C100A5116E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93EB56D2935F9C100A5116E /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F93EB5622935F16D00A5116E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F93EB5642935F16D00A5116E /* CrudUsuarios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CrudUsuarios.entitlements; sourceTree = "<group>"; };
 		F93EB5662935F16D00A5116E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F93EB56D2935F9C100A5116E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = ../CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		F93EB5582935F16A00A5116E /* CrudUsuarios */ = {
 			isa = PBXGroup;
 			children = (
+				F93EB56D2935F9C100A5116E /* CoreDataManager.swift */,
 				F93EB5592935F16A00A5116E /* CrudUsuariosApp.swift */,
 				F93EB55B2935F16A00A5116E /* Persistence.swift */,
 				F93EB5602935F16A00A5116E /* ContentView.swift */,
@@ -148,6 +151,7 @@
 				F93EB55A2935F16A00A5116E /* CrudUsuariosApp.swift in Sources */,
 				F93EB55C2935F16A00A5116E /* Persistence.swift in Sources */,
 				F93EB5612935F16A00A5116E /* ContentView.swift in Sources */,
+				F93EB56E2935F9C100A5116E /* CoreDataManager.swift in Sources */,
 				F93EB55F2935F16A00A5116E /* CrudUsuarios.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
