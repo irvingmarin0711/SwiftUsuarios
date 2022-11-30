@@ -34,7 +34,7 @@ struct ContentView: View {
                     seleccionado?.username=username
                     CoreDM.actualizarUsuario(usuario: seleccionado!)
                 }else{
-                    CoreDM.guardarUsuario(id: id, nombre: nombre, apellido: apellido, rolid: rolid, username: username)
+                    CoreDM.guardarUsuario(id: id, nombre: nombre, apellido: apellido, username: rolid, activo: username, rolid: <#String#>)
                 }
                 mostrarUsuario()
                 id=""

@@ -6,6 +6,7 @@
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="nombre" optional="YES" attributeType="String"/>
         <attribute name="rolid" optional="YES" attributeType="String"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
 </model>
