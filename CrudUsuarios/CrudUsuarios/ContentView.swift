@@ -32,5 +32,57 @@ struct ContentView: View {
                     seleccionado?.apellido=apellido
                     seleccionado?.rolid=rolid
                     seleccionado?.username=username
-                    CoreDM.actualizaraUsuario(usuario: seleccionado!)
+                    CoreDM.actualizarUsuario(usuario: seleccionado!)
+                }else{
+                    CoreDM.guardarUsuario(id: id, nombre: nombre, apellido: apellido, rolid: rolid, username: username)
                 }
+                mostrarUsuario()
+                id=""
+                nombre=""
+                apellido=""
+                rolid=""
+                username=""
+                seleccionado=nil
+            }
+            List{
+                ForEach(usArray,id: \.self){
+                    us in
+                    VStack{
+                        Text(us.id ?? "")
+                        Text(us.nombre ?? "")
+                        Text(us.apellido ?? "")
+                        Text(us.rolid ?? "")
+                        Text(us.username ?? "")
+                    }.onTapGesture{
+                        seleccionado=us
+                        id=us.id ?? ""
+                        nombre=us.nombre ?? ""
+                        apellido=us.apellido ?? ""
+                        rolid=us.rolid ?? ""
+                        username=us.username ?? ""
+                    }
+                }
+                .onDelete(perform: {
+                    indexSet in
+                    indexSet.forEach({index in let usuario=usArray[index]
+                        CoreDM.borrarUsuario(usuario: usuario)
+                        mostrarUsuario()
+                    })
+                })
+            }
+            Spacer()
+        }.padding()
+            .onAppear(perform:{
+                        mostrarUsuario()
+            })
+    }
+    func mostrarUsuario(){
+        usArray=CoreDM.leerTodosLosUsuarios()
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView(CoreDM:CoreDataManager())
+    }
+}
