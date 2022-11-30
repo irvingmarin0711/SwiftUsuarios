@@ -22,7 +22,7 @@ class CoreDataManager{
         })
     }
     
-    func guardarUsuario(id:Int64, nombre:String, apellido:String, username:String, activo:Int64, rolid:Int64){
+    func guardarUsuario(id:String, nombre:String, apellido:String, username:String, activo:String, rolid:String){
         let usuario = Usuario(context : persistentContainer.viewContext)
         usuario.id = id
         usuario.nombre = nombre
@@ -84,5 +84,15 @@ class CoreDataManager{
         }
         
     }
-
-}
+    
+    func borrarUsuario(usuario: Usuario){
+            persistentContainer.viewContext.delete(usuario)
+            
+            do{
+                try persistentContainer.viewContext.save()
+            } catch {
+                persistentContainer.viewContext.rollback()
+                print("Failed to save context \(error.localizedDescription)")
+            }
+        }
+    }
